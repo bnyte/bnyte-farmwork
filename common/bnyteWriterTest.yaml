@@ -1,0 +1,14 @@
+!com.bnyte.pojo.User
+name: bnyte
+age: 12
+phoneMap: 
+   Phone-Map: 
+      name: Phone-Map-Value
+      number: 206-555-4321
+phoneNumbers: 
+-  name: Phone-1
+   number: 206-555-1234
+-  name: Phone-2
+   number: 206-555-5678
+-  name: Phone-3
+   number: 206-555-7654

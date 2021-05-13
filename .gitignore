@@ -1,0 +1,5 @@
+# Project exclude paths
+/anno/target/
+/common/target/
+/ioc/target/
+/start/target/
