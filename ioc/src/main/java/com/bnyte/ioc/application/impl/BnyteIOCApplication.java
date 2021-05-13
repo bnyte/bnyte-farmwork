@@ -18,7 +18,8 @@ public class BnyteIOCApplication extends BnyteIOCApplicationFactory {
         // 获取注解容器
         IOCApplicationInAnnotation inAnnotation = new IOCApplicationInAnnotation();
         iocBean.put("iocBeanInAnnotation", inAnnotation.getIocBeanInAnno());
-        // TODO 获取yaml容器并放入ioc容器对象中
+        IOCApplicationInYaml iocApplicationInYaml = new IOCApplicationInYaml();
+        iocBean.put("iocBeanInYaml", iocApplicationInYaml.getIocBeanInYaml());
     }
 
 }

@@ -148,4 +148,46 @@ public class BnyteYamlUtils {
         }
         return resource.getPath();
     }
+
+    /**
+     * 将文件路径名转换成yaml容器对象中的key, 不同的yaml文件存放其对应的yaml数据
+     *  解析格式如下:
+     *      beans.yaml => beans
+     *      bnyte/bnyt/bny/beans.yaml => bnyteBnytBnyBeans
+     * @param yamlSourceName 源文件名
+     * @return 返回解析后的文件名用作为当前yaml文件中读取到的数据存放在yaml容器中的key
+     */
+    public static String formatYamlName (String yamlSourceName) {
+        int suffixIndex = yamlSourceName.lastIndexOf(".");
+        if (suffixIndex > 0) {
+            yamlSourceName = yamlSourceName.substring(0, yamlSourceName.lastIndexOf("."));
+        }
+        String change = formatPathnameChangeToCapital(yamlSourceName);
+        if (change.lastIndexOf("/") > 0) {
+            change = formatYamlName(change);
+        }
+        return change;
+    }
+
+    /**
+     * 注释见本类方法: formatYamlName() 一致, 只是该方法用作于解析多级目录的封装方法
+     * @param pathname 文件名
+     * @return 解析后的文件名
+     */
+    private static String formatPathnameChangeToCapital(String pathname) {
+        StringBuilder returnValue = new StringBuilder(pathname);
+        // 获取第一次出现的索引
+        int firstPathDelimiterIndex = returnValue.indexOf("/");
+        if (firstPathDelimiterIndex > 0) {
+            // 获取第一次出现分割符索引之前的字符串
+            String prefix = returnValue.substring(0, firstPathDelimiterIndex);
+            String suffix = returnValue.substring(firstPathDelimiterIndex + 2);
+            // 获取到文件分隔符的后一位字符并将其转换为大写
+            String changeStr = String.valueOf(pathname.charAt(firstPathDelimiterIndex + 1)).toUpperCase();
+            // 将字符进行清空拼接给返回结果
+            returnValue = new StringBuilder(prefix + changeStr + suffix);
+        }
+        return returnValue.toString();
+
+    }
 }
