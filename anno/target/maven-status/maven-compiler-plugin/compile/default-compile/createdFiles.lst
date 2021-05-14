@@ -1,0 +1,5 @@
+com\bnyte\anno\scan\Component.class
+com\bnyte\anno\get\Value.class
+com\bnyte\anno\scan\Repository.class
+com\bnyte\anno\scan\Controller.class
+com\bnyte\anno\scan\Service.class
