@@ -18,6 +18,7 @@ public class BnyteIOCApplicationFactory {
 
     }
 
+
     // IOC容器, 该容器包含了注解解析的对象和yaml解析的对象
     protected static Map<String, Map<String, Object>> iocBean = new HashMap<>();
     static {
@@ -29,9 +30,6 @@ public class BnyteIOCApplicationFactory {
 
 
 
-    public Map<String, Map<String, Object>> getIOCBean() {
-        return iocBean;
-    }
 
 
 

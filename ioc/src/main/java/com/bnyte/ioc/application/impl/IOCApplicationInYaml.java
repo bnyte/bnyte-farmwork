@@ -1,7 +1,6 @@
 package com.bnyte.ioc.application.impl;
 
 import com.bnyte.ioc.application.IOCApplicationInYamlFactory;
-import com.bnyte.util.ClazzUtils;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -37,7 +37,7 @@ public class IOCApplicationInAnnotation extends IOCApplicationInAnnotationFactor
         return iocBeanInAnno.get(beanName);
     }
 
-    public Map<String, Object> getIocBeanInAnno() {
+    protected Map<String, Object> getIocBeanInAnno() {
         return iocBeanInAnno;
     }
 }

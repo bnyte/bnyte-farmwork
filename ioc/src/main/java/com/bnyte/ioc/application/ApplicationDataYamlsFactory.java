@@ -13,6 +13,9 @@ import java.util.*;
  */
 public class ApplicationDataYamlsFactory extends AnalyzeYaml {
 
+    protected ApplicationDataYamlsFactory() {
+    }
+
     // ioc容器对象, 通过yaml解析获得, 该容器对象中的数据只会在beans.yaml和bnyteApplication.yaml中获取
     protected static Map<String, Object> iocApplicationInYaml = new HashMap<>();
 
